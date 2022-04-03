@@ -4,10 +4,10 @@ class ConnectApi {
   apiKey: string
   api: AxiosInstance
 
-  constructor({ apiKey }: { apiKey: string }) {
+  constructor({ apiKey, sandbox }: { apiKey: string, sandbox: boolean }) {
     this.apiKey = apiKey
     this.api = axios.create({
-      baseURL: 'https://api.nowpayments.io/v1/',
+      baseURL: sandbox ? 'https://api.sandbox.nowpayments.io/v1' : 'https://api.nowpayments.io/v1/',
       timeout: 10000,
       headers: { 'x-api-key': apiKey },
       validateStatus: () => true
