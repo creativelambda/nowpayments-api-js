@@ -24,6 +24,10 @@ class NOWPaymentsApi {
     return await NP.getCurrencies({ apiKey: this.apiKey })
   }
 
+  async getCurrenciesFull() {
+    return await NP.getCurrenciesFull({ apiKey: this.apiKey })
+  }
+
   async getEstimatePrice({ amount, currency_from, currency_to }: IGetEstimatePrice) {
     return await NP.getEstimatePrice({ apiKey: this.apiKey, amount, currency_from, currency_to })
   }
